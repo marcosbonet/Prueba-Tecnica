@@ -1,0 +1,24 @@
+import { Schema, model } from 'mongoose';
+
+export type CandidatesType = {
+    id: string;
+    name: string;
+    surname: string;
+    phone: number;
+    email: string;
+    cv: string;
+};
+export const candidatesSchema = new Schema<CandidatesType>({
+    id: String,
+    name: String,
+    surname: String,
+    phone: Number,
+    email: String,
+    cv: String,
+});
+
+export const Player = model<CandidatesType>(
+    'Player',
+    candidatesSchema,
+    'players'
+);
