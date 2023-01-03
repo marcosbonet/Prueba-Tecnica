@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { Controller } from '../controller/controller';
+import { Controller } from '../controller/controller.js';
 
-import { Repository } from '../repository/repository';
+import { Repository } from '../repository/repository.js';
 
 export const Routers = Router();
 const controller = new Controller(Repository.getInstance());

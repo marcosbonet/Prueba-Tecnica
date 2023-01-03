@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import { setCors } from './middlewares/cors.js';
-import { Routers } from './Router/routes';
+import { Routers } from './Router/routes.js';
 
 export const app = express();
 app.disable('x-powered.by');

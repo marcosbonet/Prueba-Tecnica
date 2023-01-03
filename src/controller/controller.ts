@@ -1,7 +1,7 @@
 import createDebug from 'debug';
 import { NextFunction, Response, Request } from 'express';
 import { Error } from 'mongoose';
-import { HTTPError } from '../interfaces/error';
+import { HTTPError } from '../interfaces/error.js';
 
 import { Repository } from '../repository/repository.js';
 
@@ -33,10 +33,10 @@ export class Controller {
         try {
             debug('query');
 
-            const match = await this.repository.get();
+            const candidates = await this.repository.get();
 
             res.status(201);
-            res.json({ match });
+            res.json({ candidates });
         } catch (error) {
             const httpError = new HTTPError(
                 503,

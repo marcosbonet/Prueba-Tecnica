@@ -1,7 +1,7 @@
 import http from 'http';
-import { dbConnect } from './db.connect/db.connect';
+import { dbConnect } from './db.connect/db.connect.js';
 import { app } from './app.js';
-import { CustomError } from './interfaces/error';
+import { CustomError } from './interfaces/error.js';
 import createDebug from 'debug';
 
 const debug = createDebug('FP:index');
