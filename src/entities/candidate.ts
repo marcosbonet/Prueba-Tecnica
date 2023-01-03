@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-export type CandidatesType = {
+export type CandidateType = {
     id: string;
     name: string;
     surname: string;
@@ -8,7 +8,7 @@ export type CandidatesType = {
     email: string;
     cv: string;
 };
-export const candidatesSchema = new Schema<CandidatesType>({
+export const candidatesSchema = new Schema<CandidateType>({
     id: String,
     name: String,
     surname: String,
@@ -17,8 +17,8 @@ export const candidatesSchema = new Schema<CandidatesType>({
     cv: String,
 });
 
-export const Player = model<CandidatesType>(
-    'Player',
+export const Candidates = model<CandidateType>(
+    'Candidates',
     candidatesSchema,
-    'players'
+    'candidates'
 );

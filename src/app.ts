@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import { setCors } from './middlewares/cors.js';
-import { playerRouter } from './router/player.routes.js';
+import { Routers } from './Router/routes';
 
 export const app = express();
 app.disable('x-powered.by');
@@ -14,4 +14,4 @@ app.use(morgan('dev'));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(setCors);
-app.use('/candidates', candidatesRouter);
+app.use('/candidates', Routers);
