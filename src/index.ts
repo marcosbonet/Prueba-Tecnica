@@ -29,6 +29,7 @@ server.on('error', (error: CustomError, response: http.ServerResponse) => {
     response.write(error.message);
     response.end();
 });
+
 dbConnect()
     .then((mongoose) => {
         debug('DB:', mongoose.connection.db.databaseName);

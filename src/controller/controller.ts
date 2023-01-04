@@ -5,7 +5,7 @@ import { HTTPError } from '../interfaces/error.js';
 
 import { Repository } from '../repository/repository.js';
 
-const debug = createDebug('FP:player:controller');
+const debug = createDebug('PF:candidates:controller');
 
 export class Controller {
     constructor(public repository: Repository) {

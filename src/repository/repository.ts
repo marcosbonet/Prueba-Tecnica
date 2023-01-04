@@ -1,6 +1,8 @@
+import createDebug from 'debug';
 import mongoose from 'mongoose';
 import { Candidates, CandidateType } from '../entities/candidate.js';
 
+const debug = createDebug('PF:candidates:repository');
 export class Repository {
     static instance: Repository;
     public static getInstance(): Repository {
@@ -11,11 +13,14 @@ export class Repository {
     }
     #Model = Candidates;
     async get(): Promise<Array<CandidateType>> {
-        return Candidates.find();
+        const result = await this.#Model.find({});
+
+        return result;
     }
 
     async create(data: Partial<CandidateType>): Promise<CandidateType> {
-        const result = await Candidates.create(data);
+        const result = await this.#Model.create(data);
+        debug('repository');
 
         return result as CandidateType;
     }
